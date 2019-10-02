@@ -1,0 +1,372 @@
+---
+title: "抽样调查作业"
+author: |
+    | sword
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+documentclass: ctexart
+fontsize: 12pt
+geometry: tmargin=2.5cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm
+output:
+#  pdf_document:  
+  rticles::ctex:
+    keep_tex: true
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    latex_engine: xelatex
+classoption: "hyperref,"
+header-includes: 
+  - \usepackage{fontspec, xunicode, xltxtra}    
+  - \usepackage{xeCJK,ctex}
+  - \usepackage{bm,xcolor}
+  - \usepackage{fancyhdr}
+  
+  - \pagestyle{fancy}
+#  - \fancyhead[L]{\textit{试验设计}}
+#  - \fancyhead[C]{上海数萃大数据学院}
+#  - \fancyhead[RE,RO]{}  
+#  - \fancyhead[LE,LO]{}
+#  - \fancyfoot[R]{\thepage}
+#  - \fancyfoot[C]{上海数萃大数据学院}  
+# 设置页眉线与页脚线宽度与颜色
+  - \renewcommand{\headrule}{{\color{red}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
+  - \renewcommand{\footrule}{{\color{black}\vskip-\footruleskip\vskip-\footrulewidth \hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
+  - \renewcommand{\headrulewidth}{0.8pt}
+  - \renewcommand{\footrulewidth}{0.6pt}
+#  - \renewcommand\contentsname{\bfseries 目录}  
+# 定制章节标题格式 
+  - \usepackage[sf,raggedright]{titlesec}
+#  - \usepackage{titletoc}
+  - \titleformat{\section}{\bfseries\large\color{black}}{\bfseries\thesection}{0.5em}{}
+  - \titleformat{\subsection}{\bfseries\normalsize}{\bfseries\thesubsection}{0.5em}{}
+  - \titlespacing{\section}{0pt}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+  - \titlespacing{\subsection}{0pt}{1.5ex plus .1ex minus .2ex}{\wordsep}
+# hyperline
+  - \hypersetup{colorlinks=true, breaklinks=true, linkcolor=blue}
+  - \usepackage{indentfirst}
+  - \setlength{\parindent}{0em}
+  - \renewcommand{\vec}{\boldsymbol}
+  - \newcommand{\mn}{\mathrm{N}}
+#  - \usepackage{txfonts}
+  - \newcommand{\cov}{\mathrm{Cov}}
+  - \newcommand{\mi}{\mathrm{I}}
+  - \newcommand{\me}{\mathrm{E}}
+#  - \newcommand{\e}{\mathrm{e}}
+  - \newcommand{\mv}{\mathrm{V}}
+  - \usepackage{booktabs}
+  - \usepackage{caption}
+---
+
+\newpage
+
+# 第四周作业
+
+\kaishu
+
+1.$\ \bar{y}$ 是简单随机样本的平均数，$\bar{Y}$ 是总体均值，下面的推导正确吗？为什么？
+\begin{equation*}
+\me(\bar{y})=\me\left(\frac 1n \sum_{i=1}^ny_i\right)=\frac 1n \sum_{i=1}^n\me(y_i)=\frac 1n\sum_{i=1}^n\bar{Y}=\bar{Y}
+\end{equation*}
+
+\vspace{1em}
+
+\heiti
+
+解答
+
+\songti
+
+单独一条这样的式子，实际上很难确定对错，因为没办法知道解题人的思路是怎样的。说错，可以，因为不全；说对，也可以，因为倒数第二个等号是过得去的（这相当于是彩票模型，诸 $y_i$ 的分布是相同的）。我们还是不要纠结于对错，背后的思想更珍贵。
+
+\vspace{3em}
+
+\kaishu
+
+2.设总体 $N=5$ ，其指标值为 $\{3\, ,5\, ,6\, ,7\, ,9\}$ 。  
+1) 计算总体方差 $\sigma^2$ 和 $S^2$ ；  
+2) 从中抽取 $n=2$ 的简单随机样本，分别计算放回抽样和不放回抽样的方差；  
+3) 按放回抽样和不放回抽样分别列出所有可能的样本并计算 $\bar{y}$ ，验证 $\me(\bar{y})=\bar{Y}$ ；  
+4) 按放回抽样和不放回抽样的所有可能的样本，计算其方差 $\mv(\bar{y})$ ，并与公式计算的结果进行比较；  
+5) 对所有的可能样本计算样本方差 $s^2$ ，验证在放回抽样的情况下 $\me(s^2)=\sigma^2$ ，在不放回抽样的情况下 $\me(s^2)=S^2$ 。
+
+\vspace{1em}
+
+\heiti
+
+解答
+
+\songti
+
+1) 记 $(Y_1\, ,Y_2\, ,\cdots ,Y_5)=(3\, ,5\, ,6\, ,7\, ,9)$ ，则 $\bar{Y}=6$ ，故
+\begin{equation*}
+\begin{aligned}
+& \sigma^2=\frac 1N\sum_{i=1}^N(Y_i-\bar{Y})^2=4 \\
+& S^2=\frac 1{N-1}\sum_{i=1}^N(Y_i-\bar{Y})^2=5
+\end{aligned}
+\end{equation*}
+
+2) 
+
+3) 放回抽样情形下抽取简单随机样本的结果如下。
+
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{放回抽样情形下的简单随机样本及均值}
+\begin{tabular}{cr|cr|cr}
+\toprule
+样本 & $\bar{y}$ & 样本 & $\bar{y}$ & 样本 & $\bar{y}$ \\
+\midrule
+$(3\, ,3)$ & 3 & $(6\, ,3)$ & 4.5 & $(9\, ,3)$ & 6 \\ 
+$(3\, ,5)$ & 4 & $(6\, ,5)$ & 5.5 & $(9\, ,5)$ & 7 \\ 
+$(3\, ,6)$ & 4.5 & $(6\, ,6)$ & 6 & $(9\, ,6)$ & 7.5 \\ 
+$(3\, ,7)$ & 5 & $(6\, ,7)$ & 6.5 & $(9\, ,7)$ & 8 \\ 
+$(3\, ,9)$ & 6 & $(6\, ,9)$ & 7.5 & $(9\, ,9)$ & 9 \\ 
+$(5\, ,3)$ & 4 & $(7\, ,3)$ & 5 & & \\
+$(5\, ,5)$ & 5 & $(7\, ,5)$ & 6 & & \\
+$(5\, ,6)$ & 5.5 & $(7\, ,6)$ & 6.5 & & \\
+$(5\, ,7)$ & 6 & $(7\, ,7)$ & 7 & & \\
+$(5\, ,9)$ & 7 & $(7\, ,9)$ & 8 & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+不放回抽样情形下抽取简单随机样本的结果如下。
+
+\begin{table}[ht]
+\centering
+\caption{不放回抽样情形下的简单随机样本及均值}
+\begin{tabular}{cr|cr}
+\toprule
+样本 & $\bar{y}$ & 样本 & $\bar{y}$ \\
+\midrule
+$(3\, ,5)$ & 4 & $(5\, ,7)$ & 6 \\
+$(3\, ,6)$ & 4.5 & $(5\, ,9)$ & 7 \\
+$(3\, ,7)$ & 5 & $(6\, ,7)$ & 6.5 \\
+$(3\, ,9)$ & 6 & $(6\, ,9)$ & 7.5 \\
+$(5\, ,6)$ & 5.5 & $(7\, ,9)$ & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+由上可见 $\me(\bar{y})=\bar{Y}$ 。
+
+4) 放回抽样样本均值的方差为 $\mv_1(\bar{y})=2$ ，不放回抽样样本均值的方差为 $\mv_2(\bar{y})=1.5$ 。按照公式，$\mv_1^*(\bar{y})=S^2/n=2$ ，$\mv_2^*(\bar{y})=(1-f)S^2/n=1.5$ ，二者均吻合。
+
+5) 放回抽样情形下抽取简单随机样本的结果如下。
+
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{放回抽样情形下的简单随机样本及方差}
+\begin{tabular}{cr|cr|cr}
+\toprule
+样本 & $\bar{y}$ & 样本 & $\bar{y}$ & 样本 & $\bar{y}$ \\
+\midrule
+$(3\, ,3)$ & 0 & $(6\, ,3)$ & 4.5 & $(9\, ,3)$ & 18 \\ 
+$(3\, ,5)$ & 2 & $(6\, ,5)$ & 0.5 & $(9\, ,5)$ & 8 \\ 
+$(3\, ,6)$ & 4.5 & $(6\, ,6)$ & 0 & $(9\, ,6)$ & 4.5 \\ 
+$(3\, ,7)$ & 8 & $(6\, ,7)$ & 0.5 & $(9\, ,7)$ & 2 \\ 
+$(3\, ,9)$ & 18 & $(6\, ,9)$ & 4.5 & $(9\, ,9)$ & 0 \\ 
+$(5\, ,3)$ & 2 & $(7\, ,3)$ & 8 & & \\
+$(5\, ,5)$ & 0 & $(7\, ,5)$ & 2 & & \\
+$(5\, ,6)$ & 0.5 & $(7\, ,6)$ & 0.5 & & \\
+$(5\, ,7)$ & 2 & $(7\, ,7)$ & 0 & & \\
+$(5\, ,9)$ & 8 & $(7\, ,9)$ & 2 & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+不放回抽样情形下抽取简单随机样本的结果如下。
+
+\begin{table}[ht]
+\centering
+\caption{不放回抽样情形下的简单随机样本及方差}
+\begin{tabular}{cr|cr}
+\toprule
+样本 & $\bar{y}$ & 样本 & $\bar{y}$ \\
+\midrule
+$(3\, ,5)$ & 2 & $(5\, ,7)$ & 2 \\
+$(3\, ,6)$ & 4.5 & $(5\, ,9)$ & 8 \\
+$(3\, ,7)$ & 8 & $(6\, ,7)$ & 0.5 \\
+$(3\, ,9)$ & 18 & $(6\, ,9)$ & 4.5 \\
+$(5\, ,6)$ & 0.5 & $(7\, ,9)$ & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+从而易验证结论成立。
+
+\vspace{3em}
+
+\kaishu
+
+3.某林场共有1000公顷林地，随机布设了50块面积为0.06公顷的方形样地，测得这50块样本地的平均木材积蓄量为 $9 \mathrm{m}^3$ ，标准差为 $1.63 \mathrm{m}^3$ 。试以95%的置信度估计该林场的木材积蓄量。
+
+\vspace{1em}
+
+\heiti
+
+解答
+
+\songti
+
+林场木材积蓄量的估计值 $\hat{Y}=N\bar{y}$ ，此处 $N=[1000/0.06]=16666$ 。从而其95%置信度的置信区间为
+\begin{equation*}
+\begin{aligned}
+& \left[N\bar{y}-Nu_{0.975}\sqrt{\frac{1-f}{n}}s\, ,N\bar{y}+Nu_{0.975}\sqrt{\frac{1-f}{n}}s\right] \\
+=& [142578\, ,157410]
+\end{aligned}
+\end{equation*}
+
+\vspace{3em}
+
+\kaishu
+
+4.某居民区共有10000户，现用抽样调查估计该区居民的用水量。采用简单随机样本抽样选取了100户，得 $\bar{y}=12.5\, ,s^2=1252$ 。估计该居民区的总用水量95%的置信区间。若要求估计的相对误差不超过20%，试问应抽取多少户做样本？
+
+\vspace{1em}
+
+\heiti
+
+解答
+
+\songti
+
+与上题类似，95%置信区间为
+\begin{equation*}
+\begin{aligned}
+& \left[N\bar{y}-Nu_{0.975}\sqrt{\frac{1-f}{n}s^2}\, ,N\bar{y}+Nu_{0.975}\sqrt{\frac{1-f}{n}s^2}\,\right] \\
+=& [55997.02\, ,194003]
+\end{aligned}
+\end{equation*}我们知道
+\begin{equation*}
+P\left\{|\bar{y}-\bar{Y}|\le u_{0.975}\sqrt{\frac{1-f}{n}s^2}\right\}=0.95
+\end{equation*}于是，为使相对误差不超过20%，即要求
+\begin{equation*}
+\frac{u_{0.975}\sqrt{\frac{1-f}{n}s^2}}{\bar{Y}}\le 0.2
+\end{equation*}这里 $\bar{Y}$ 用$\bar{y}$ 来代替，就有
+\begin{equation*}
+n\ge \left(\left(\frac{0.2\bar{y}}{u_{0.975}s}\right)^2+\frac 1N\right)^{-1}=714.54
+\end{equation*}因此，应抽取715户作为样本。
+
+\vspace{3em}
+
+\kaishu
+
+5.从一叠单据中用简单随机抽样方法抽取了250张，发现其中有50张单据出现错误，试以95%置信度估计这批单据中有错误的比例。若已知这批单据共1000张，你的结论有何变化？若要求估计的绝对误差不超过1%，则至少应抽取多少单据作样本？
+
+\vspace{1em}
+
+\heiti
+
+解答
+
+\songti
+
+当单据数量未知时，认为 $N=\infty$ ，而 $\hat{P}=0.2$ ，此时置信区间为
+\begin{equation*}
+\begin{aligned}
+& \left[\hat{P}-u_{0.975}\sqrt{\frac 1n\hat{P}(1-\hat{P})}\, ,\hat{P}+u_{0.975}\sqrt{\frac 1n\hat{P}(1-\hat{P})}\,\right] \\
+=& [0.1504\, ,0.2496]
+\end{aligned}
+\end{equation*}当 $N=1000$ 时，置信区间为
+\begin{equation*}
+\begin{aligned}
+& \left[\hat{P}-u_{0.975}\sqrt{\frac{(1-f)N\hat{P}(1-\hat{P})}{n(N-1)}}\, ,\hat{P}+u_{0.975}\sqrt{\frac{(1-f)N\hat{P}(1-\hat{P})}{n(N-1)}}\,\right] \\
+=& [0.1570\, ,0.2430]
+\end{aligned}
+\end{equation*}可见，置信区间变窄了，这是因为有限样本抽样获得的信息更多了。
+
+当绝对误差不超过1%时，采取保守估计，即
+\begin{equation*}
+u_{0.975}\sqrt{\frac{(1-f)N}{4n(N-1)}}\le 0.01
+\end{equation*}解出样本量 $n$ 至少为906张。
+
+\vspace{3em}
+
+\kaishu
+
+6.假设总体中每个单元有两个指标 $Y_i$ 和 $X_i$ ，$i=1\, ,2\, ,\cdots ,N$ ，记 $\bar{y}\, ,\bar{x}$ 为相应的简单随机样本的均值。试证样本协方差
+\begin{equation*}
+s_{yx}=\frac{1}{n-1}\sum_{i=1}^{n}(y_i-\bar{y})(x_i-\bar{x})
+\end{equation*}是总体协方差
+\begin{equation*}
+S_{yx}=\frac{1}{N-1}\sum_{i=1}^{N}(Y_i-\bar{Y})(X_i-\bar{X})
+\end{equation*}的无偏估计。
+
+\vspace{1em}
+
+\heiti
+
+解答
+
+\songti
+
+对样本离差乘积和，有
+\begin{equation*}
+\begin{aligned}
+& \sum_{i=1}^{n}(y_i-\bar{y})(x_i-\bar{x}) \\
+=& \sum_{i=1}^{n}(y_i-\bar{y})x_i \\
+=& \sum_{i=1}^ny_ix_i-\sum_{i=1}^nx_i\bar{y} 
+\end{aligned}
+\end{equation*}考察 $\me(x_iy_j)$ 。当 $i=j$ 时，$x_iy_i$ 等可能地取以下值
+\begin{equation*}
+X_1Y_1\, ,X_2Y_2\, ,\cdots ,X_NY_N
+\end{equation*}于是
+\begin{equation*}
+\me(x_iy_i)=\frac 1N\sum_{k=1}^NX_kY_k
+\end{equation*}当 $i\ne j$ 时，$x_iy_j$ 等可能地取以下值
+\begin{equation*}
+\begin{aligned}
+& X_1Y_2\, ,X_1Y_3\, ,\cdots ,X_1Y_N \\
+& X_2Y_1\, ,X_2Y_3\, ,\cdots ,X_2Y_N \\
+& \cdots \\
+& X_NY_1\, ,X_NY_2\, ,\cdots ,X_NY_{N-1} \\
+\end{aligned}
+\end{equation*}于是
+\begin{equation*}
+\me(x_iy_j)=\frac 1{N(N-1)}\sum_{s\ne l}X_sY_l
+\end{equation*}综上，有
+\begin{equation*}
+\begin{aligned}
+\me(s_{yx}) &= \frac{1}{n-1}\me\left(\sum_{i=1}^ny_ix_i\right)-\frac{1}{n-1}\me\left(\sum_{i=1}^nx_i\bar{y}\right) \\
+&= \me(x_1y_1)-\me(x_1y_2) \\
+&= \frac 1N\sum_{k=1}^NX_kY_k-\frac 1{N(N-1)}\sum_{s\ne l}X_sY_l \\
+&= \frac 1N\sum_{k=1}^NX_kY_k-\frac 1{N(N-1)}\left(N^2\bar{X}\bar{Y}-\sum_{k=1}^NX_kY_k\right) \\
+&= \frac{1}{N-1}\left(\sum_{k=1}^NX_kY_k-N\bar{X}\bar{Y}\right) \\
+&= \frac{1}{N-1}\sum_{k=1}^{N}(Y_k-\bar{Y})(X_k-\bar{X})
+\end{aligned}
+\end{equation*}
+
+
+\vspace{3em}
+
+\kaishu
+
+7.设 $\bar{y}$ 是从总体 $\{Y_1\, ,\cdots ,Y_N\}$ 中抽取的样本量为 $n$ 的简单随机样本均值，$\bar{y}_{n_1}$ 是从该样本中抽取的容量为 $n_1$ 的简单随机子样本均值，$\bar{y}_{n_2}$ 是剩余的样本单元的均值。试证：
+\begin{equation*}
+\cov(\bar{y}_{n_1}\, ,\bar{y}_{n_2})=-\frac{S_y^2}{N}
+\end{equation*}
+
+\vspace{1em}
+
+\heiti
+
+解答
+
+\songti
+
+由简单随机样本的特征，单独来看， $\bar{y}_{n_1}$ 相当于从总体中抽取的容量为 $n_1$ 的简单随机样本，$\bar{y}_{n_2}$ 相当于从总体中抽取的容量为 $n_2$ 的简单随机样本。从而
+\begin{equation*}
+\begin{aligned}
+\mv(\bar{y}) &= \mv\left(\frac{{n_1}\bar{y}_{n_1}+n_2\bar{y}_{n_2}}{n}\right) \\
+&= \frac{n_1^2}{n^2}\mv(\bar{y}_{n_1})+\frac{n_2^2}{n^2}\mv(\bar{y}_{n_2})+2\cov\left(\frac{n_1}{n}\bar{y}_{n_1}\, ,\frac{n_2}{n}\bar{y}_{n_2}\right) \\
+&= \frac{n_1^2}{n^2}\frac{N-n_1}{Nn_1}S_y^2+\frac{n_2^2}{n^2}\frac{N-n_2}{Nn_2}S_y^2+\frac{2n_1n_2}{n^2}\cov(\bar{y}_{n_1}\, ,\bar{y}_{n_2})
+\end{aligned}
+\end{equation*}整理得到
+\begin{equation*}
+\cov(\bar{y}_{n_1}\, ,\bar{y}_{n_2})=\frac{n_1^2+n_2^2-n^2}{2Nn_1n_2}S_y^2=-\frac{S_y^2}{N}
+\end{equation*}

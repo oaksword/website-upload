@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My Own Cool Website</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on My Own Cool Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>抽样调查作业</title>
+      <link>/2019/10/02/%E6%8A%BD%E6%A0%B7%E8%B0%83%E6%9F%A5%E4%BD%9C%E4%B8%9A/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/10/02/%E6%8A%BD%E6%A0%B7%E8%B0%83%E6%9F%A5%E4%BD%9C%E4%B8%9A/</guid>
+      <description>第四周作业1.\(\ \bar{y}\) 是简单随机样本的平均数，\(\bar{Y}\) 是总体均值，下面的推导正确吗？为什么？
+\[\begin{equation*}\mathrm{E}(\bar{y})=\mathrm{E}\left(\frac 1n \sum_{i=1}^ny_i\right)=\frac 1n \sum_{i=1}^n\mathrm{E}(y_i)=\frac 1n\sum_{i=1}^n\bar{Y}=\bar{Y}\end{equation*}\]
+解答
+单独一条这样的式子，实际上很难确定对错，因为没办法知道解题人的思路是怎样的。说错，可以，因为不全；说对，也可以，因为倒数第二个等号是过得去的（这相当于是彩票模型，诸 \(y_i\) 的分布是相同的）。我们还是不要纠结于对错，背后的思想更珍贵。
+2.设总体 \(N=5\) ，其指标值为 \(\{3\, ,5\, ,6\, ,7\, ,9\}\) 。
+1) 计算总体方差 \(\sigma^2\) 和 \(S^2\) ；
+2) 从中抽取 \(n=2\) 的简单随机样本，分别计算放回抽样和不放回抽样的方差；
+3) 按放回抽样和不放回抽样分别列出所有可能的样本并计算 \(\bar{y}\) ，验证 \(\mathrm{E}(\bar{y})=\bar{Y}\) ；
+4) 按放回抽样和不放回抽样的所有可能的样本，计算其方差 \(\mathrm{V}(\bar{y})\) ，并与公式计算的结果进行比较；
+5) 对所有的可能样本计算样本方差 \(s^2\) ，验证在放回抽样的情况下 \(\mathrm{E}(s^2)=\sigma^2\) ，在不放回抽样的情况下 \(\mathrm{E}(s^2)=S^2\) 。
+解答
+记 \((Y_1\, ,Y_2\, ,\cdots ,Y_5)=(3\, ,5\, ,6\, ,7\, ,9)\) ，则 \(\bar{Y}=6\) ，故\[\begin{equation*}\begin{aligned}&amp;amp; \sigma^2=\frac 1N\sum_{i=1}^N(Y_i-\bar{Y})^2=4 \\&amp;amp; S^2=\frac 1{N-1}\sum_{i=1}^N(Y_i-\bar{Y})^2=5\end{aligned}\end{equation*}\]</description>
+    </item>
+    
+    <item>
+      <title>A Plain Markdown Post</title>
+      <link>/2016/12/30/a-plain-markdown-post/</link>
+      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      
+      <guid>/2016/12/30/a-plain-markdown-post/</guid>
+      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
+ You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/2015/07/23/hello-r-markdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/2015/07/23/hello-r-markdown/</guid>
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Lorem Ipsum</title>
+      <link>/2015/01/01/lorem-ipsum/</link>
+      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
+      
+      <guid>/2015/01/01/lorem-ipsum/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    
+  </channel>
+</rss>

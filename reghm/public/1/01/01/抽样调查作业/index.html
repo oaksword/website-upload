@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.58.3" />
+
+
+<title>抽样调查作业 - My Own Cool Website</title>
+<meta property="og:title" content="抽样调查作业 - My Own Cool Website">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/oaksword/Homework_Sword">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">抽样调查作业</h1>
+
+    
+    <span class="article-date">0001-01-01</span>
+    
+
+    <div class="article-content">
+      
+
+
+
+
+
+
+
+
+<div id="section" class="section level1">
+<h1>第四周作业</h1>
+
+<p>1.<span class="math inline">\(\ \bar{y}\)</span> 是简单随机样本的平均数，<span class="math inline">\(\bar{Y}\)</span> 是总体均值，下面的推导正确吗？为什么？
+<span class="math display">\[\begin{equation*}
+\mathrm{E}(\bar{y})=\mathrm{E}\left(\frac 1n \sum_{i=1}^ny_i\right)=\frac 1n \sum_{i=1}^n\mathrm{E}(y_i)=\frac 1n\sum_{i=1}^n\bar{Y}=\bar{Y}
+\end{equation*}\]</span></p>
+
+
+<p>解答</p>
+
+<p>单独一条这样的式子，实际上很难确定对错，因为没办法知道解题人的思路是怎样的。说错，可以，因为不全；说对，也可以，因为倒数第二个等号是过得去的（这相当于是彩票模型，诸 <span class="math inline">\(y_i\)</span> 的分布是相同的）。我们还是不要纠结于对错，背后的思想更珍贵。</p>
+
+
+<p>2.设总体 <span class="math inline">\(N=5\)</span> ，其指标值为 <span class="math inline">\(\{3\, ,5\, ,6\, ,7\, ,9\}\)</span> 。<br />
+1) 计算总体方差 <span class="math inline">\(\sigma^2\)</span> 和 <span class="math inline">\(S^2\)</span> ；<br />
+2) 从中抽取 <span class="math inline">\(n=2\)</span> 的简单随机样本，分别计算放回抽样和不放回抽样的方差；<br />
+3) 按放回抽样和不放回抽样分别列出所有可能的样本并计算 <span class="math inline">\(\bar{y}\)</span> ，验证 <span class="math inline">\(\mathrm{E}(\bar{y})=\bar{Y}\)</span> ；<br />
+4) 按放回抽样和不放回抽样的所有可能的样本，计算其方差 <span class="math inline">\(\mathrm{V}(\bar{y})\)</span> ，并与公式计算的结果进行比较；<br />
+5) 对所有的可能样本计算样本方差 <span class="math inline">\(s^2\)</span> ，验证在放回抽样的情况下 <span class="math inline">\(\mathrm{E}(s^2)=\sigma^2\)</span> ，在不放回抽样的情况下 <span class="math inline">\(\mathrm{E}(s^2)=S^2\)</span> 。</p>
+
+
+<p>解答</p>
+
+<ol style="list-style-type: decimal">
+<li><p>记 <span class="math inline">\((Y_1\, ,Y_2\, ,\cdots ,Y_5)=(3\, ,5\, ,6\, ,7\, ,9)\)</span> ，则 <span class="math inline">\(\bar{Y}=6\)</span> ，故
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+&amp; \sigma^2=\frac 1N\sum_{i=1}^N(Y_i-\bar{Y})^2=4 \\
+&amp; S^2=\frac 1{N-1}\sum_{i=1}^N(Y_i-\bar{Y})^2=5
+\end{aligned}
+\end{equation*}\]</span></p></li>
+<li></li>
+<li><p>放回抽样情形下抽取简单随机样本的结果如下。</p></li>
+</ol>
+
+
+<p>不放回抽样情形下抽取简单随机样本的结果如下。</p>
+
+<p>由上可见 <span class="math inline">\(\mathrm{E}(\bar{y})=\bar{Y}\)</span> 。</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>放回抽样样本均值的方差为 <span class="math inline">\(\mathrm{V}_1(\bar{y})=2\)</span> ，不放回抽样样本均值的方差为 <span class="math inline">\(\mathrm{V}_2(\bar{y})=1.5\)</span> 。按照公式，<span class="math inline">\(\mathrm{V}_1^*(\bar{y})=S^2/n=2\)</span> ，<span class="math inline">\(\mathrm{V}_2^*(\bar{y})=(1-f)S^2/n=1.5\)</span> ，二者均吻合。</p></li>
+<li><p>放回抽样情形下抽取简单随机样本的结果如下。</p></li>
+</ol>
+
+
+<p>不放回抽样情形下抽取简单随机样本的结果如下。</p>
+
+<p>从而易验证结论成立。</p>
+
+
+<p>3.某林场共有1000公顷林地，随机布设了50块面积为0.06公顷的方形样地，测得这50块样本地的平均木材积蓄量为 <span class="math inline">\(9 \mathrm{m}^3\)</span> ，标准差为 <span class="math inline">\(1.63 \mathrm{m}^3\)</span> 。试以95%的置信度估计该林场的木材积蓄量。</p>
+
+
+<p>解答</p>
+
+<p>林场木材积蓄量的估计值 <span class="math inline">\(\hat{Y}=N\bar{y}\)</span> ，此处 <span class="math inline">\(N=[1000/0.06]=16666\)</span> 。从而其95%置信度的置信区间为
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+&amp; \left[N\bar{y}-Nu_{0.975}\sqrt{\frac{1-f}{n}}s\, ,N\bar{y}+Nu_{0.975}\sqrt{\frac{1-f}{n}}s\right] \\
+=&amp; [142578\, ,157410]
+\end{aligned}
+\end{equation*}\]</span></p>
+
+
+<p>4.某居民区共有10000户，现用抽样调查估计该区居民的用水量。采用简单随机样本抽样选取了100户，得 <span class="math inline">\(\bar{y}=12.5\, ,s^2=1252\)</span> 。估计该居民区的总用水量95%的置信区间。若要求估计的相对误差不超过20%，试问应抽取多少户做样本？</p>
+
+
+<p>解答</p>
+
+<p>与上题类似，95%置信区间为
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+&amp; \left[N\bar{y}-Nu_{0.975}\sqrt{\frac{1-f}{n}s^2}\, ,N\bar{y}+Nu_{0.975}\sqrt{\frac{1-f}{n}s^2}\,\right] \\
+=&amp; [55997.02\, ,194003]
+\end{aligned}
+\end{equation*}\]</span>我们知道
+<span class="math display">\[\begin{equation*}
+P\left\{|\bar{y}-\bar{Y}|\le u_{0.975}\sqrt{\frac{1-f}{n}s^2}\right\}=0.95
+\end{equation*}\]</span>于是，为使相对误差不超过20%，即要求
+<span class="math display">\[\begin{equation*}
+\frac{u_{0.975}\sqrt{\frac{1-f}{n}s^2}}{\bar{Y}}\le 0.2
+\end{equation*}\]</span>这里 <span class="math inline">\(\bar{Y}\)</span> 用<span class="math inline">\(\bar{y}\)</span> 来代替，就有
+<span class="math display">\[\begin{equation*}
+n\ge \left(\left(\frac{0.2\bar{y}}{u_{0.975}s}\right)^2+\frac 1N\right)^{-1}=714.54
+\end{equation*}\]</span>因此，应抽取715户作为样本。</p>
+
+
+<p>5.从一叠单据中用简单随机抽样方法抽取了250张，发现其中有50张单据出现错误，试以95%置信度估计这批单据中有错误的比例。若已知这批单据共1000张，你的结论有何变化？若要求估计的绝对误差不超过1%，则至少应抽取多少单据作样本？</p>
+
+
+<p>解答</p>
+
+<p>当单据数量未知时，认为 <span class="math inline">\(N=\infty\)</span> ，而 <span class="math inline">\(\hat{P}=0.2\)</span> ，此时置信区间为
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+&amp; \left[\hat{P}-u_{0.975}\sqrt{\frac 1n\hat{P}(1-\hat{P})}\, ,\hat{P}+u_{0.975}\sqrt{\frac 1n\hat{P}(1-\hat{P})}\,\right] \\
+=&amp; [0.1504\, ,0.2496]
+\end{aligned}
+\end{equation*}\]</span>当 <span class="math inline">\(N=1000\)</span> 时，置信区间为
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+&amp; \left[\hat{P}-u_{0.975}\sqrt{\frac{(1-f)N\hat{P}(1-\hat{P})}{n(N-1)}}\, ,\hat{P}+u_{0.975}\sqrt{\frac{(1-f)N\hat{P}(1-\hat{P})}{n(N-1)}}\,\right] \\
+=&amp; [0.1570\, ,0.2430]
+\end{aligned}
+\end{equation*}\]</span>可见，置信区间变窄了，这是因为有限样本抽样获得的信息更多了。</p>
+<p>当绝对误差不超过1%时，采取保守估计，即
+<span class="math display">\[\begin{equation*}
+u_{0.975}\sqrt{\frac{(1-f)N}{4n(N-1)}}\le 0.01
+\end{equation*}\]</span>解出样本量 <span class="math inline">\(n\)</span> 至少为906张。</p>
+
+
+<p>6.假设总体中每个单元有两个指标 <span class="math inline">\(Y_i\)</span> 和 <span class="math inline">\(X_i\)</span> ，<span class="math inline">\(i=1\, ,2\, ,\cdots ,N\)</span> ，记 <span class="math inline">\(\bar{y}\, ,\bar{x}\)</span> 为相应的简单随机样本的均值。试证样本协方差
+<span class="math display">\[\begin{equation*}
+s_{yx}=\frac{1}{n-1}\sum_{i=1}^{n}(y_i-\bar{y})(x_i-\bar{x})
+\end{equation*}\]</span>是总体协方差
+<span class="math display">\[\begin{equation*}
+S_{yx}=\frac{1}{N-1}\sum_{i=1}^{N}(Y_i-\bar{Y})(X_i-\bar{X})
+\end{equation*}\]</span>的无偏估计。</p>
+
+
+<p>解答</p>
+
+<p>对样本离差乘积和，有
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+&amp; \sum_{i=1}^{n}(y_i-\bar{y})(x_i-\bar{x}) \\
+=&amp; \sum_{i=1}^{n}(y_i-\bar{y})x_i \\
+=&amp; \sum_{i=1}^ny_ix_i-\sum_{i=1}^nx_i\bar{y} 
+\end{aligned}
+\end{equation*}\]</span>考察 <span class="math inline">\(\mathrm{E}(x_iy_j)\)</span> 。当 <span class="math inline">\(i=j\)</span> 时，<span class="math inline">\(x_iy_i\)</span> 等可能地取以下值
+<span class="math display">\[\begin{equation*}
+X_1Y_1\, ,X_2Y_2\, ,\cdots ,X_NY_N
+\end{equation*}\]</span>于是
+<span class="math display">\[\begin{equation*}
+\mathrm{E}(x_iy_i)=\frac 1N\sum_{k=1}^NX_kY_k
+\end{equation*}\]</span>当 <span class="math inline">\(i\ne j\)</span> 时，<span class="math inline">\(x_iy_j\)</span> 等可能地取以下值
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+&amp; X_1Y_2\, ,X_1Y_3\, ,\cdots ,X_1Y_N \\
+&amp; X_2Y_1\, ,X_2Y_3\, ,\cdots ,X_2Y_N \\
+&amp; \cdots \\
+&amp; X_NY_1\, ,X_NY_2\, ,\cdots ,X_NY_{N-1} \\
+\end{aligned}
+\end{equation*}\]</span>于是
+<span class="math display">\[\begin{equation*}
+\mathrm{E}(x_iy_j)=\frac 1{N(N-1)}\sum_{s\ne l}X_sY_l
+\end{equation*}\]</span>综上，有
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+\mathrm{E}(s_{yx}) &amp;= \frac{1}{n-1}\mathrm{E}\left(\sum_{i=1}^ny_ix_i\right)-\frac{1}{n-1}\mathrm{E}\left(\sum_{i=1}^nx_i\bar{y}\right) \\
+&amp;= \mathrm{E}(x_1y_1)-\mathrm{E}(x_1y_2) \\
+&amp;= \frac 1N\sum_{k=1}^NX_kY_k-\frac 1{N(N-1)}\sum_{s\ne l}X_sY_l \\
+&amp;= \frac 1N\sum_{k=1}^NX_kY_k-\frac 1{N(N-1)}\left(N^2\bar{X}\bar{Y}-\sum_{k=1}^NX_kY_k\right) \\
+&amp;= \frac{1}{N-1}\left(\sum_{k=1}^NX_kY_k-N\bar{X}\bar{Y}\right) \\
+&amp;= \frac{1}{N-1}\sum_{k=1}^{N}(Y_k-\bar{Y})(X_k-\bar{X})
+\end{aligned}
+\end{equation*}\]</span></p>
+
+
+<p>7.设 <span class="math inline">\(\bar{y}\)</span> 是从总体 <span class="math inline">\(\{Y_1\, ,\cdots ,Y_N\}\)</span> 中抽取的样本量为 <span class="math inline">\(n\)</span> 的简单随机样本均值，<span class="math inline">\(\bar{y}_{n_1}\)</span> 是从该样本中抽取的容量为 <span class="math inline">\(n_1\)</span> 的简单随机子样本均值，<span class="math inline">\(\bar{y}_{n_2}\)</span> 是剩余的样本单元的均值。试证：
+<span class="math display">\[\begin{equation*}
+\mathrm{Cov}(\bar{y}_{n_1}\, ,\bar{y}_{n_2})=-\frac{S_y^2}{N}
+\end{equation*}\]</span></p>
+
+
+<p>解答</p>
+
+<p>由简单随机样本的特征，单独来看， <span class="math inline">\(\bar{y}_{n_1}\)</span> 相当于从总体中抽取的容量为 <span class="math inline">\(n_1\)</span> 的简单随机样本，<span class="math inline">\(\bar{y}_{n_2}\)</span> 相当于从总体中抽取的容量为 <span class="math inline">\(n_2\)</span> 的简单随机样本。从而
+<span class="math display">\[\begin{equation*}
+\begin{aligned}
+\mathrm{V}(\bar{y}) &amp;= \mathrm{V}\left(\frac{{n_1}\bar{y}_{n_1}+n_2\bar{y}_{n_2}}{n}\right) \\
+&amp;= \frac{n_1^2}{n^2}\mathrm{V}(\bar{y}_{n_1})+\frac{n_2^2}{n^2}\mathrm{V}(\bar{y}_{n_2})+2\mathrm{Cov}\left(\frac{n_1}{n}\bar{y}_{n_1}\, ,\frac{n_2}{n}\bar{y}_{n_2}\right) \\
+&amp;= \frac{n_1^2}{n^2}\frac{N-n_1}{Nn_1}S_y^2+\frac{n_2^2}{n^2}\frac{N-n_2}{Nn_2}S_y^2+\frac{2n_1n_2}{n^2}\mathrm{Cov}(\bar{y}_{n_1}\, ,\bar{y}_{n_2})
+\end{aligned}
+\end{equation*}\]</span>整理得到
+<span class="math display">\[\begin{equation*}
+\mathrm{Cov}(\bar{y}_{n_1}\, ,\bar{y}_{n_2})=\frac{n_1^2+n_2^2-n^2}{2Nn_1n_2}S_y^2=-\frac{S_y^2}{N}
+\end{equation*}\]</span></p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+
